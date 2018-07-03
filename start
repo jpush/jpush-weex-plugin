@@ -1,0 +1,17 @@
+#!/bin/bash
+# called by native
+THIS_DIR=$(dirname "$0")
+pushd "$THIS_DIR"
+
+pid=$(lsof -i:12580|tail -1|awk '"$1"!=""{print $2}')  
+if [ -z $pid ]  
+then
+echo "Start static server for playground!"
+else
+echo "Process pid=$pid killed and static server start!"
+kill -9 $pid
+fi
+
+npm start
+
+popd

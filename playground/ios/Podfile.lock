@@ -1,0 +1,57 @@
+PODS:
+  - ATSDK-Weex (0.0.1)
+  - JCore (1.2.0)
+  - JPush (3.0.9):
+    - JCore (~> 1.2.0)
+  - JpushWeexPlugin (0.0.1):
+    - WeexPluginLoader
+    - WeexSDK
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - SocketRocket (0.4.2)
+  - WeexPluginLoader (0.0.1.9.1):
+    - WeexSDK
+  - WeexSDK (0.18.0)
+  - WXDevtool (0.9.5):
+    - WeexSDK
+
+DEPENDENCIES:
+  - ATSDK-Weex (= 0.0.1)
+  - JPush (= 3.0.9)
+  - JpushWeexPlugin (from `../../`)
+  - SDWebImage (= 3.7.5)
+  - SocketRocket (= 0.4.2)
+  - WeexPluginLoader
+  - WeexSDK (= 0.18.0)
+  - WXDevtool (= 0.9.5)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ATSDK-Weex
+    - JCore
+    - JPush
+    - SDWebImage
+    - SocketRocket
+    - WeexPluginLoader
+    - WeexSDK
+    - WXDevtool
+
+EXTERNAL SOURCES:
+  JpushWeexPlugin:
+    :path: "../../"
+
+SPEC CHECKSUMS:
+  ATSDK-Weex: 1b27558f4336d77fb97704d34fc6ad1fd468592c
+  JCore: b52e3dd73625eec70afd1244bb9c41038aa06087
+  JPush: 48041e8c5ad2ef9b48709eb0888af9640b36e9b0
+  JpushWeexPlugin: 1a136b35e006be655beaf7397ded103f29e9b154
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  SocketRocket: ffe08119b00ef982f6c37052a4705a057c8494ad
+  WeexPluginLoader: 85c1304f8ba29864e58531614a0acfeceef1b85c
+  WeexSDK: ac56f255ce9a48e93ebc2e003956ab20da33321d
+  WXDevtool: 5135a5c6f4426fb635babb9eacfa14352bc66dc6
+
+PODFILE CHECKSUM: fbc6215f743bd0704083491e6727318a6e78ea55
+
+COCOAPODS: 1.5.3
