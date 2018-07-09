@@ -6,14 +6,14 @@
 //  Copyright © 2017年 . All rights reserved.
 //
 
-#import "JpushWeexPluginModule.h"
+#import "JPushWeexPluginModule.h"
 #import <WeexPluginLoader/WeexPluginLoader.h>
 #import <JPush/JPUSHService.h>
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
 #import <UserNotifications/UserNotifications.h>
 #endif
 
-@interface JpushWeexPluginModule() <JPUSHRegisterDelegate>
+@interface JPushWeexPluginModule() <JPUSHRegisterDelegate>
 @property(assign, nonatomic)BOOL isJPushDidLogin;
 @property(strong, nonatomic)WXModuleKeepAliveCallback receiveNotificationCallback;
 @property(strong, nonatomic)WXModuleKeepAliveCallback receiveCustomMessageCallback;
