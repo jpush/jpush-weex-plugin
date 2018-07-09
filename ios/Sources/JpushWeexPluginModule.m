@@ -398,7 +398,7 @@ WX_EXPORT_METHOD(@selector(getRegistrationID:))
 -(void)getRegistrationID: (WXModuleKeepAliveCallback)callback {
 #if TARGET_IPHONE_SIMULATOR//模拟器
     NSLog(@"simulator can not get registrationid");
-    callback(@[@""]);
+    callback(@[@""], false);
 #elif TARGET_OS_IPHONE//真机
     if (_isJPushDidLogin) {
         callback([JPUSHService registrationID], false);
@@ -435,15 +435,5 @@ WX_EXPORT_METHOD(@selector(getRegistrationID:))
     completionHandler();
 }
 #endif
-
-WX_EXPORT_METHOD(@selector(show:callback:callback2:))
--(void)show:(NSString *) str callback: (WXModuleCallback)callback callback2: (WXModuleKeepAliveCallback)aliveCallBack
-{
-
-    aliveCallBack(@{@"1": @(1)}, true);
-    aliveCallBack(@{@"2": @(2)},false);
-    aliveCallBack(@{@"3": @(3)},true);
-
-}
 
 @end

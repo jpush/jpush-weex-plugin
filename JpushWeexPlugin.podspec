@@ -2,8 +2,9 @@
 
 Pod::Spec.new do |s|
   s.name         = "JPushWeexPlugin"
-  s.version      = "0.0.1"
-  s.summary      = "Weex Plugin"
+  s.version      = "0.0.2"
+  s.summary      = "JPush Weex Plugin"
+  s.static_framework = true
 
   s.description  = <<-DESC
                    Weexplugin Source Description
