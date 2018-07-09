@@ -20,12 +20,12 @@
 @property(strong, nonatomic)WXModuleKeepAliveCallback openNotificationCallback;
 @end
 
-@implementation JpushWeexPluginModule
+@implementation JPushWeexPluginModule
 
 WX_PlUGIN_EXPORT_MODULE(jpushWeexPlugin, JpushWeexPluginModule)
 
 + (id)allocWithZone:(NSZone *)zone {
-    static JpushWeexPluginModule *sharedInstance = nil;
+    static JPushWeexPluginModule *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [super allocWithZone:zone];

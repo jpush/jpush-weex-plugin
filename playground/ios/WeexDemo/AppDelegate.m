@@ -24,7 +24,7 @@
 #import <UserNotifications/UserNotifications.h>
 #endif
 #import <JPush/JPUSHService.h>
-#import <JpushWeexPluginModule.h>
+#import <JPushWeexPluginModule.h>
 
 @interface AppDelegate ()
 @end
@@ -39,7 +39,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
 
-    [[[JpushWeexPluginModule alloc] init] setupWithOption:launchOptions
+    [[[JPushWeexPluginModule alloc] init] setupWithOption:launchOptions
                                                     appKey:@"a1703c14b186a68a66ef86c1"
                                                    channel:nil
                                           apsForProduction:nil];
