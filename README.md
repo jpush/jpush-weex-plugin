@@ -26,7 +26,7 @@ $ pod install JPushWeexPlugin --save
   {
   // your code
 
-      [[[JpushWeexPluginModule alloc] init] setupWithOption:launchOptions
+      [[[JPushWeexPluginModule alloc] init] setupWithOption:launchOptions
                                                       appKey:@"a1703c14b186a68a66ef86c1"
                                                      channel:nil
                                             apsForProduction:nil];

@@ -33,4 +33,7 @@ Pod::Spec.new do |s|
   s.libraries       = 'z','resolv'
   s.dependency "WeexSDK"
   s.dependency "JPush"
+  s.xcconfig = {
+    'VALID_ARCHS' =>  'arm64 x86_64',
+  }
 end
