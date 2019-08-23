@@ -59,7 +59,7 @@ $ pod install JPushWeexPlugin --save
 
 目前支持本地集成，将 android/library 下载到本地,参考下面步骤配置：
 
-- 修改 app 下的 build.gradle 配置：
+- 修改setting.gradle配置：
 
 > your weex project/android/setting.gradle
 
@@ -68,6 +68,8 @@ $ pod install JPushWeexPlugin --save
   project (':jpush-weex-plugin').projectDir = new File("../../android/library") // 替换成下你载的插件路径
 
 ```
+
+- 修改 app 下的 build.gradle 配置：
 
 > your weex project/android/app/build.gradle
 
