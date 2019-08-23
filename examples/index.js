@@ -6,11 +6,16 @@ var EventHandlers = {
     receiveMessage: []  
 };
 
+let os =weex.config.env.platform;
+
 const JPush = {
     /**
      * 初始化 JPush 必须先初始化才能执行其他操作(比如接收事件传递)
      */
     init: function() {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.setup(function (notification) {
             for (var index in EventHandlers.receiveNotification) {
                 EventHandlers.receiveNotification[index].apply(undefined, [notification])
@@ -24,12 +29,27 @@ const JPush = {
                 EventHandlers.receiveMessage[index].apply(undefined, [message])
               }
         });
+        
+    },
+
+    /**
+     * Android only
+     * @param {boolean} debug 
+     * 设置是否打开 debug 模式
+     */
+    setDebugMode: function (debug) {
+        if(os == "android"){
+            jpushWeexPlugin.setDebugMode(debug);
+        }
     },
     /**
+     * iOS only
      * 申请推送权限当，注意这个方法只会向用户弹出一次推送权限请求（如果用户不同意，之后只能用户到设置页面里面勾选相应权限），需要开发者选择合适的时机调用。
      */
     applyPushAuthority: function () {
-        jpushWeexPlugin.applyPushAuthority();
+        if(os == "iOS"){
+            jpushWeexPlugin.applyPushAuthority();
+        }
     },
     /**
      * 设置 Tag （会覆盖之前设置的 tags）
@@ -39,6 +59,9 @@ const JPush = {
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
     setTags: function(params, success, fail) {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.setTags(params,success, fail);
     },
     /**
@@ -48,6 +71,9 @@ const JPush = {
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
     cleanTags: function(success, fail) {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.cleanTags(success, fail);
     },
     /**
@@ -58,6 +84,9 @@ const JPush = {
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
     addTags: function(params, success, fail) {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.addTags(params, success, fail);
     },
     /**
@@ -68,6 +97,9 @@ const JPush = {
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
     deleteTags: function(params, success, fail) {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.deleteTags(params, success, fail);
     },
     /**
@@ -77,6 +109,9 @@ const JPush = {
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
     getAllTags: function(success, fail) {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.getAllTags(success, fail);
     },
     /**
@@ -88,6 +123,9 @@ const JPush = {
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
     setAlias: function(params, success, fail) {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.setAlias(params, success, fail);
     },
     /**
@@ -97,6 +135,9 @@ const JPush = {
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
     deleteAlias: function(success, fail) {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.deleteAlias(success, fail);
     },
     /**
@@ -106,24 +147,35 @@ const JPush = {
      * @param {Int} badge
      */
     setBadge: function(params) {
-        jpushWeexPlugin.setBadge(params);
+        if(os == "iOS"){
+            jpushWeexPlugin.setBadge(params);
+        }
     },
     /**
      * 停止接收推送，调用该方法后应用将不再受到推送，如果想要重新收到推送可以调用 resumePush。
      */
     stopPush: function() {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.stopPush();
     },
     /**
      * 恢复推送功能。
      */
     resumePush: function() {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.resumePush();
     },
     /**
      * 清空通知栏上的所有通知。
      */
     clearAllNotifications: function () {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.clearAllNotifications();
     },
     /**
@@ -134,7 +186,9 @@ const JPush = {
      * @param {Function} callback = (Object) => {}
      */
     getLaunchAppNotification: function(callback) {
-        jpushWeexPlugin.getLaunchAppNotification(callback);
+        if(os =="iOS"){
+            jpushWeexPlugin.getLaunchAppNotification(callback);
+        }
     },
     /**
      * 获取 RegistrationId, JPush 可以通过制定 RegistrationId 来进行推送。
@@ -142,6 +196,9 @@ const JPush = {
      * * @param {Function} callback = (String) => {}
      */
     getRegistrationID: function(callback) {
+        if(os == "Web"){
+            return;
+        }
         jpushWeexPlugin.getRegistrationID(callback);
     },
     /**
@@ -150,6 +207,9 @@ const JPush = {
      * @param {} listener = (Object）=> {}
      */
     addReceiveNotificationListener: function(listener) {
+        if(os == "Web"){
+            return;
+        }
         EventHandlers.receiveNotification.push(listener);
     },
     /**
@@ -158,6 +218,9 @@ const JPush = {
      * @param {Function} listener = (Object）=> {}
      */
     removeReceiveNotificationListener: function(listener) {
+        if(os == "Web"){
+            return;
+        }
         var handlerIndex = EventHandlers.receiveNotification.indexOf(listener)
         if (handlerIndex >= 0) {
           EventHandlers.receiveNotification.splice(handlerIndex, 1);
@@ -169,6 +232,9 @@ const JPush = {
      * @param {Function} listener = (Object）=> {}
      */
     addReceiveOpenNotificationListener: function (listener) {
+        if(os == "Web"){
+            return;
+        }
         EventHandlers.openNotification.push(listener);
     },
     /**
@@ -177,6 +243,9 @@ const JPush = {
      * @param {Function} listener = (Object）=> {}
      */
     removeReceiveOpenNotificationListener: function (listener) {
+        if(os == "Web"){
+            return;
+        }
         var handlerIndex = EventHandlers.openNotification.indexOf(listener);
         if (handlerIndex >= 0) {
           EventHandlers.openNotification.splice(handlerIndex, 1);
@@ -188,12 +257,18 @@ const JPush = {
      * @param {Function} listener = (Object）=> {}
      */
     addReceiveCustomMsgListener: function (listener) {
+        if(os == "Web"){
+            return;
+        }
         EventHandlers.receiveMessage.push(listener);
     },
     /**
      * 取消监听：自定义消息后事件
      */
     removeReceiveCustomMsgListener: function (listener) {
+        if(os == "Web"){
+            return;
+        }
         var handlerIndex = EventHandlers.receiveMessage.indexOf(listener);
         if (handlerIndex >= 0) {
           EventHandlers.receiveMessage.splice(handlerIndex, 1);

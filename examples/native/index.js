@@ -94,10 +94,10 @@ __vue_options__ = __vue_exports__ = __vue_exports__.default
 if (typeof __vue_options__ === "function") {
   __vue_options__ = __vue_options__.options
 }
-__vue_options__.__file = "/Users/HuminiOS/Desktop/myproject/weex/jpush-weex-plugin/examples/index.vue"
+__vue_options__.__file = "/Users/josh/work/JIguang/JPush/weex/jpush-weex-plugin/examples/index.vue"
 __vue_options__.render = __vue_template__.render
 __vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-__vue_options__._scopeId = "data-v-088b570f"
+__vue_options__._scopeId = "data-v-2955a216"
 __vue_options__.style = __vue_options__.style || {}
 __vue_styles__.forEach(function (module) {
   for (var name in module) {
@@ -172,224 +172,225 @@ module.exports = {
 
 /***/ }),
 /* 3 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_js__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__index_js__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
-var _index = __webpack_require__(4);
+// const jpushWeexPlugin = weex.requireModule('jpushWeexPlugin');
 
-var _index2 = _interopRequireDefault(_index);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-_index2.default.addReceiveNotificationListener(function (notification) {
+__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.addReceiveNotificationListener(function (notification) {
 	console.log('vue console111' + JSON.stringify(notification));
-}); //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+});
 
-_index2.default.addReceiveNotificationListener(function (notification) {
+__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.addReceiveNotificationListener(function (notification) {
 	console.log('vue console2222' + JSON.stringify(notification));
 });
 
-_index2.default.init(); // 初始化 JPush 插件，如果没有调用这个方法，JS 端将不会收到相关事件。
-_index2.default.applyPushAuthority(); // 申请推送权限
+__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.init(); // 初始化 JPush 插件，如果没有调用这个方法，JS 端将不会收到相关事件。
+__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.setDebugMode(false); // 设置打开debug模式，Android only
+// JPush.applyPushAuthority() // 申请推送权限 iOS only
 
-module.exports = {
+
+/* harmony default export */ __webpack_exports__["default"] = ({
 	data: {
 		logo: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png'
 	},
 	methods: {
-		createAction: function createAction() {
-			_index2.default.setBadge(88);
+		createAction: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.setBadge(88);
 		},
-		init: function init() {
-			_index2.default.init();
+		init: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.init();
+			// jpushWeexPlugin.show();
 		},
-		getRegistrationID: function getRegistrationID() {
-			_index2.default.getRegistrationID(function (res) {
+		getRegistrationID: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.getRegistrationID(res => {
 				console.log('getRegistrationID' + JSON.stringify(res));
 			});
 		},
-		applyPushAuthority: function applyPushAuthority() {
-			_index2.default.applyPushAuthority();
+		applyPushAuthority: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.applyPushAuthority();
 		},
-		stopPush: function stopPush() {
-			_index2.default.stopPush();
+		stopPush: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.stopPush();
 		},
-		resumePush: function resumePush() {
-			_index2.default.resumePush();
+		resumePush: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.resumePush();
 		},
-		setTag: function setTag() {
-			_index2.default.setTags(['11', '22', '33'], function (res) {
+		setTag: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.setTags(['11', '22', '33'], res => {
 				console.log('setTag' + JSON.stringify(res));
-			}, function (err) {
+			}, err => {
 				console.log('error' + JSON.stringify(err));
 			});
 		},
-		cleanTag: function cleanTag() {
-			_index2.default.cleanTags(function (res) {
+		cleanTag: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.cleanTags(res => {
 				console.log('cleanTags' + JSON.stringify(res));
-			}, function (err) {
+			}, err => {
 				console.log('error' + JSON.stringify(err));
 			});
 		},
-		addTags: function addTags() {
-			_index2.default.addTags(['11', '22', '33'], function (res) {
+		addTags: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.addTags(['11', '22', '33'], res => {
 				console.log('setTag' + JSON.stringify(res));
-			}, function (err) {
+			}, err => {
 				console.log('error' + JSON.stringify(err));
 			});
 		},
-		deleteTags: function deleteTags() {
-			_index2.default.deleteTags(['11', '22', '33'], function (res) {
-				console.log('setTag' + JSON.stringify(res));
-			}, function (err) {
+		deleteTags: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.deleteTags(['11', '22', '33'], res => {
+				console.log('deleteTag' + JSON.stringify(res));
+			}, err => {
 				console.log('error' + JSON.stringify(err));
 			});
 		},
-		getAllTags: function getAllTags() {
-			_index2.default.getAllTags(function (res) {
+		getAllTags: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.getAllTags(res => {
 				console.log('cleanTags' + JSON.stringify(res));
-			}, function (err) {
+			}, err => {
 				console.log('error' + JSON.stringify(err));
 			});
 		},
-		setAlias: function setAlias() {
-			_index2.default.setAlias('thealias', function (res) {
+		setAlias: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.setAlias('thealias', res => {
 				console.log('setAlias' + JSON.stringify(res));
-			}, function (err) {
+			}, err => {
 				console.log('error' + JSON.stringify(err));
 			});
 		},
-		deleteAlias: function deleteAlias() {
+		deleteAlias: function () {
 			// JPush.deleteAlias((res) => {
 			// 	console.log('deleteAlias' + JSON.stringify(res))
 			// }, (err) => {
 			// 	console.log('error' + JSON.stringify(err))
 			// });
 
-			_index2.default.deleteAlias(function (res) {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.deleteAlias(res => {
 				console.log('cleanTags' + JSON.stringify(res));
-			}, function (err) {
+			}, err => {
 				console.log('error' + JSON.stringify(err));
 			});
 		},
-		clearAllNotifications: function clearAllNotifications() {
-			_index2.default.clearAllNotifications();
+		clearAllNotifications: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.clearAllNotifications();
 		},
-		getLaunchAppNotification: function getLaunchAppNotification() {
-			_index2.default.getLaunchAppNotification(function (not) {
+		getLaunchAppNotification: function () {
+			__WEBPACK_IMPORTED_MODULE_0__index_js___default.a.getLaunchAppNotification(not => {
 				console.log('getLaunchAppNotification' + JSON.stringify(not));
 			});
 		}
 	}
-};
+});
 
 /***/ }),
 /* 4 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-var jpushWeexPlugin = weex.requireModule('jpushWeexPlugin');
+const jpushWeexPlugin = weex.requireModule('jpushWeexPlugin');
 
 var EventHandlers = {
     receiveNotification: [],
@@ -397,11 +398,16 @@ var EventHandlers = {
     receiveMessage: []
 };
 
-var JPush = {
+let os = weex.config.env.platform;
+
+const JPush = {
     /**
      * 初始化 JPush 必须先初始化才能执行其他操作(比如接收事件传递)
      */
-    init: function init() {
+    init: function () {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.setup(function (notification) {
             for (var index in EventHandlers.receiveNotification) {
                 EventHandlers.receiveNotification[index].apply(undefined, [notification]);
@@ -416,11 +422,25 @@ var JPush = {
             }
         });
     },
+
     /**
+     * Android only
+     * @param {boolean} debug 
+     * 设置是否打开 debug 模式
+     */
+    setDebugMode: function (debug) {
+        if (os == "android") {
+            jpushWeexPlugin.setDebugMode(debug);
+        }
+    },
+    /**
+     * iOS only
      * 申请推送权限当，注意这个方法只会向用户弹出一次推送权限请求（如果用户不同意，之后只能用户到设置页面里面勾选相应权限），需要开发者选择合适的时机调用。
      */
-    applyPushAuthority: function applyPushAuthority() {
-        jpushWeexPlugin.applyPushAuthority();
+    applyPushAuthority: function () {
+        if (os == "iOS") {
+            jpushWeexPlugin.applyPushAuthority();
+        }
     },
     /**
      * 设置 Tag （会覆盖之前设置的 tags）
@@ -429,7 +449,10 @@ var JPush = {
      * @param {Function} success = ({"tags":[String],"errorCode":int}) => {  }
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
-    setTags: function setTags(params, success, fail) {
+    setTags: function (params, success, fail) {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.setTags(params, success, fail);
     },
     /**
@@ -438,7 +461,10 @@ var JPush = {
      * @param {Function} success = ({"tags":[String],"errorCode":int}) => {  }
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
-    cleanTags: function cleanTags(success, fail) {
+    cleanTags: function (success, fail) {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.cleanTags(success, fail);
     },
     /**
@@ -448,7 +474,10 @@ var JPush = {
      * @param {Function} success = ({"tags":[String],"errorCode":int}) => {  }
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
-    addTags: function addTags(params, success, fail) {
+    addTags: function (params, success, fail) {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.addTags(params, success, fail);
     },
     /**
@@ -458,7 +487,10 @@ var JPush = {
      * @param {Function} success = ({"tags":[String],"errorCode":int}) => {  }
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
-    deleteTags: function deleteTags(params, success, fail) {
+    deleteTags: function (params, success, fail) {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.deleteTags(params, success, fail);
     },
     /**
@@ -467,7 +499,10 @@ var JPush = {
      * @param {Function} success = ({"tags":[String],"errorCode":int}) => {  }
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
-    getAllTags: function getAllTags(success, fail) {
+    getAllTags: function (success, fail) {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.getAllTags(success, fail);
     },
     /**
@@ -478,7 +513,10 @@ var JPush = {
      * @param {Function} success = ({"alias":String,"errorCode":int}) => {  }
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
-    setAlias: function setAlias(params, success, fail) {
+    setAlias: function (params, success, fail) {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.setAlias(params, success, fail);
     },
     /**
@@ -487,7 +525,10 @@ var JPush = {
      * @param {Function} success = ({"alias":String,"errorCode":int}) => {  }
      * @param {Function} fail = ({"errorCode":int}) => {  }
      */
-    deleteAlias: function deleteAlias(success, fail) {
+    deleteAlias: function (success, fail) {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.deleteAlias(success, fail);
     },
     /**
@@ -496,25 +537,36 @@ var JPush = {
      * 
      * @param {Int} badge
      */
-    setBadge: function setBadge(params) {
-        jpushWeexPlugin.setBadge(params);
+    setBadge: function (params) {
+        if (os == "iOS") {
+            jpushWeexPlugin.setBadge(params);
+        }
     },
     /**
      * 停止接收推送，调用该方法后应用将不再受到推送，如果想要重新收到推送可以调用 resumePush。
      */
-    stopPush: function stopPush() {
+    stopPush: function () {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.stopPush();
     },
     /**
      * 恢复推送功能。
      */
-    resumePush: function resumePush() {
+    resumePush: function () {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.resumePush();
     },
     /**
      * 清空通知栏上的所有通知。
      */
-    clearAllNotifications: function clearAllNotifications() {
+    clearAllNotifications: function () {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.clearAllNotifications();
     },
     /**
@@ -524,15 +576,20 @@ var JPush = {
      * 如果不是通过点击推送启动应用，比如点击应用 icon 直接启动应用，notification 会返回 @{}。
      * @param {Function} callback = (Object) => {}
      */
-    getLaunchAppNotification: function getLaunchAppNotification(callback) {
-        jpushWeexPlugin.getLaunchAppNotification(callback);
+    getLaunchAppNotification: function (callback) {
+        if (os == "iOS") {
+            jpushWeexPlugin.getLaunchAppNotification(callback);
+        }
     },
     /**
      * 获取 RegistrationId, JPush 可以通过制定 RegistrationId 来进行推送。
      * 
      * * @param {Function} callback = (String) => {}
      */
-    getRegistrationID: function getRegistrationID(callback) {
+    getRegistrationID: function (callback) {
+        if (os == "Web") {
+            return;
+        }
         jpushWeexPlugin.getRegistrationID(callback);
     },
     /**
@@ -540,7 +597,10 @@ var JPush = {
      * 
      * @param {} listener = (Object）=> {}
      */
-    addReceiveNotificationListener: function addReceiveNotificationListener(listener) {
+    addReceiveNotificationListener: function (listener) {
+        if (os == "Web") {
+            return;
+        }
         EventHandlers.receiveNotification.push(listener);
     },
     /**
@@ -548,7 +608,10 @@ var JPush = {
      * 
      * @param {Function} listener = (Object）=> {}
      */
-    removeReceiveNotificationListener: function removeReceiveNotificationListener(listener) {
+    removeReceiveNotificationListener: function (listener) {
+        if (os == "Web") {
+            return;
+        }
         var handlerIndex = EventHandlers.receiveNotification.indexOf(listener);
         if (handlerIndex >= 0) {
             EventHandlers.receiveNotification.splice(handlerIndex, 1);
@@ -559,7 +622,10 @@ var JPush = {
      * 
      * @param {Function} listener = (Object）=> {}
      */
-    addReceiveOpenNotificationListener: function addReceiveOpenNotificationListener(listener) {
+    addReceiveOpenNotificationListener: function (listener) {
+        if (os == "Web") {
+            return;
+        }
         EventHandlers.openNotification.push(listener);
     },
     /**
@@ -567,7 +633,10 @@ var JPush = {
      * 
      * @param {Function} listener = (Object）=> {}
      */
-    removeReceiveOpenNotificationListener: function removeReceiveOpenNotificationListener(listener) {
+    removeReceiveOpenNotificationListener: function (listener) {
+        if (os == "Web") {
+            return;
+        }
         var handlerIndex = EventHandlers.openNotification.indexOf(listener);
         if (handlerIndex >= 0) {
             EventHandlers.openNotification.splice(handlerIndex, 1);
@@ -578,13 +647,19 @@ var JPush = {
      * 
      * @param {Function} listener = (Object）=> {}
      */
-    addReceiveCustomMsgListener: function addReceiveCustomMsgListener(listener) {
+    addReceiveCustomMsgListener: function (listener) {
+        if (os == "Web") {
+            return;
+        }
         EventHandlers.receiveMessage.push(listener);
     },
     /**
      * 取消监听：自定义消息后事件
      */
-    removeReceiveCustomMsgListener: function removeReceiveCustomMsgListener(listener) {
+    removeReceiveCustomMsgListener: function (listener) {
+        if (os == "Web") {
+            return;
+        }
         var handlerIndex = EventHandlers.receiveMessage.indexOf(listener);
         if (handlerIndex >= 0) {
             EventHandlers.receiveMessage.splice(handlerIndex, 1);

@@ -97,21 +97,24 @@
 </style>
 
 <script>	
-	import JPush from '../src/index.js';
+	import JPush from './index.js';
+	// const jpushWeexPlugin = weex.requireModule('jpushWeexPlugin');
 
 	
-	JPush.addReceiveNotificationListener(function (notification) {
-		console.log('vue console111' + JSON.stringify(notification))
-	})
+		JPush.addReceiveNotificationListener(function (notification) {
+			console.log('vue console111' + JSON.stringify(notification))
+		})
 
-	JPush.addReceiveNotificationListener(function (notification) {
-		console.log('vue console2222' + JSON.stringify(notification))
-	})
+		JPush.addReceiveNotificationListener(function (notification) {
+			console.log('vue console2222' + JSON.stringify(notification))
+		})
 
-	JPush.init() // 初始化 JPush 插件，如果没有调用这个方法，JS 端将不会收到相关事件。
-	JPush.applyPushAuthority() // 申请推送权限
+		JPush.init() // 初始化 JPush 插件，如果没有调用这个方法，JS 端将不会收到相关事件。
+		JPush.setDebugMode(false) // 设置打开debug模式，Android only
+		// JPush.applyPushAuthority() // 申请推送权限 iOS only
 
-	module.exports = {
+
+	export default  {
 		data: {
 			logo: 'http://img1.vued.vanthink.cn/vued08aa73a9ab65dcbd360ec54659ada97c.png',
 		},
@@ -159,7 +162,7 @@
 			},
 			deleteTags: function() {
 				JPush.deleteTags(['11','22','33'], (res) => {
-					console.log('setTag' + JSON.stringify(res))
+					console.log('deleteTag' + JSON.stringify(res))
 				}, (err) => {
 					console.log('error' + JSON.stringify(err))
 				})
