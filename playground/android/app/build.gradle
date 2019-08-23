@@ -1,12 +1,12 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.taobao.android.weex.plugin.gradle'
 android {
-    compileSdkVersion 26
-    buildToolsVersion "26.0.0"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "org.weex.demo"
-        minSdkVersion 15
-        targetSdkVersion 27
+        minSdkVersion 14
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -15,6 +15,10 @@ android {
             abiFilters "x86"
             abiFilters "armeabi"
         }
+        manifestPlaceholders = [
+                JPUSH_APPKEY: "a11df47116e92f9db75a32f3",         //在此替换你的APPKey
+                JPUSH_CHANNEL: "developer-default"  //在此替换你的channel
+        ]
     }
     buildTypes {
         release {
@@ -28,6 +32,10 @@ android {
                 srcDirs = ["src/main/java", "src/main/java_zxing","src/main/java_commons"];
             }
         }
+    }
+    lintOptions {
+        disable 'MissingTranslation'
+        disable 'ExtraTranslation'
     }
 }
 
@@ -62,8 +70,9 @@ dependencies {
     compile "com.android.support:support-annotations:${rootProject.ext.androidSupportVersion}"
     compile 'com.jakewharton.scalpel:scalpel:1.1.2'
     compile 'com.android.support.test.espresso:espresso-idling-resource:2.2.2'
-    compile 'com.taobao.android.weex_inspection:urlconnection_interceptor:1.0.0@aar'
-    compile 'com.taobao.android:weex_inspector:0.12.1@aar'
+    compile 'com.taobao.android.weex_inspection:urlconnection_interceptor:1.0.0'
+    compile 'com.taobao.android.weex_inspection:protocol:1.1.4.1'
+    compile 'com.taobao.android:weex_inspector:0.13.4'
 
     compile "com.taobao.android:weex_sdk:${rootProject.ext.weex_sdk}"
     compile 'com.taobao.android:weexplugin-loader:1.3'
