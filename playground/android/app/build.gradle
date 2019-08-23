@@ -4,7 +4,7 @@ android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
     defaultConfig {
-        applicationId "org.weex.demo"
+        applicationId "你的 applicationId"//此处为你的 applicationId
         minSdkVersion 14
         targetSdkVersion 25
         versionCode 1
@@ -16,7 +16,7 @@ android {
             abiFilters "armeabi"
         }
         manifestPlaceholders = [
-                JPUSH_APPKEY: "a11df47116e92f9db75a32f3",         //在此替换你的APPKey
+                JPUSH_APPKEY: "你的 appkey", //在此替换你的APPKey
                 JPUSH_CHANNEL: "developer-default"  //在此替换你的channel
         ]
     }
