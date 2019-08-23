@@ -56,8 +56,71 @@ $ pod install JPushWeexPlugin --save
 
 
 ### Android
+ 目前支持本地集成，参考下面步骤：
+ - 将 android/library 下载到本地
+ - 
+ - 修改 app 下的 build.gradle 配置：
+
+  > your weex project/android/setting.gradle
+
+  ```java
+    include ":jpush-weex-plugin"
+    project (':jpush-weex-plugin').projectDir = new File("../../android/library") // 替换成下你载的插件路径
+
+  ```
 
 
+  > your weex project/android/app/build.gradle
+
+  ```java
+  android {
+      defaultConfig {
+          applicationId "yourApplicationId"
+          ...
+          manifestPlaceholders = [
+                  JPUSH_APPKEY: "yourAppKey",         //在此替换你的APPKey
+                  JPUSH_CHANNEL: "developer-default"  //在此替换你的channel
+          ]
+      }
+  }
+
+  ...
+  dependencies {
+      implementation fileTree(dir: "libs", include: ["*.jar"])
+      implementation project(':jpush-weex-plugin')  // 添加 jpush weex 插件依赖
+
+  }
+  ```
+  同时在AndridManifest.xml中添加如下代码
+
+  ```
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="${JPUSH_CHANNEL}" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="${JPUSH_APPKEY}" />
+  ```
+
+  **操作完成后点击AndroidStudio的构建**
+
+- 在 Application 中注册 JPush 插件
+```
+import org.weex.plugin.jpushweexplugin.JpushWeexPluginModule;
+...
+public class WXApplication extends Application {
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    ...
+    WXSDKEngine.registerModule("jpushWeexPlugin", JpushWeexPluginModule.class);
+  }
+
+  ...  
+}
+
+```
 
 ## APIs
 
